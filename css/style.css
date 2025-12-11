@@ -1,0 +1,1826 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Return Link Styles */
+.return-link {
+    margin: 15px 0;
+}
+
+.return-link a {
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.return-link a:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Protocol Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 0 0 45%;
+}
+
+#reject-btn {
+    background-color: #f44336;
+    color: white;
+    order: 1;
+}
+
+#accept-btn {
+    background-color: #4CAF50;
+    color: white;
+    order: 2;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Top Navigation Styles */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 90%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+}
+
+.mobile-menu-icon span {
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu ul li {
+    position: relative;
+    margin-left: 25px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    display: block;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 0 0 5px 5px;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+}
+
+.dropdown-content li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    display: block;
+}
+
+.dropdown-content a, .dropdown-content span {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
+    margin: 0;
+    line-height: 1.5;
+    border: none;
+    background: none;
+    text-align: left;
+    position: relative;
+}
+
+.dropdown-content a:hover, .dropdown-content span:hover {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+/* Ensure nav-menu dropdown items have proper padding and hover effect */
+.nav-menu .dropdown-content a, 
+.nav-menu .dropdown-content span {
+    padding: 12px 16px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Add down arrow for dropdowns on desktop */
+@media screen and (min-width: 769px) {
+    .nav-menu ul li.dropdown > a::after {
+        content: ' ▼';
+        font-size: 12px;
+        margin-left: 5px;
+    }
+}
+
+.nav-menu .dropdown-content a:hover, 
+.nav-menu .dropdown-content span:hover {
+    padding: 12px 16px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile dropdown specific styles with !important to override desktop styles */
+@media screen and (max-width: 768px) {
+    .nav-menu .dropdown-content {
+        display: none !important;
+        position: static !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+    
+    .nav-menu .dropdown.active .dropdown-content {
+        display: block !important;
+    }
+}
+
+/* 更具体的选择器确保样式覆盖 */
+.nav-menu .dropdown .dropdown-content {
+    display: none;
+    left: 0;
+    right: auto;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Show dropdown content on hover for desktop */
+.nav-menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-menu .dropdown .dropdown-content li {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.nav-menu .dropdown .dropdown-content a,
+.nav-menu .dropdown .dropdown-content span {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    background-color: white !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+    text-align: left !important;
+    text-decoration: none !important;
+}
+
+.nav-menu .dropdown .dropdown-content a:hover,
+.nav-menu .dropdown .dropdown-content span:hover {
+    background-color: #2196F3 !important;
+    color: white !important;
+    cursor: pointer !important;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+/* Search Box Styles */
+.search-box input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 250px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
+}
+
+/* Articles Page Specific Styles */
+.article-content {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.article-content .container {
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 15px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Articles Page Footer Styles */
+.article-page .footer .container {
+    max-width: 1320px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.article-page .footer {
+    background-color: #333;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+/* Search Results Section */
+.search-results {
+    padding: 30px 0;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1320px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-page .search-results {
+    padding: 30px 0;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1320px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-results h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-results .emoji-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(5, 220px);
+}
+
+/* 确保搜索结果在移动端一行显示2个 */
+@media (max-width: 768px) {
+    .search-results .emoji-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Page Title */
+.page-title {
+    padding: 30px 25px;
+    text-align: center;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1320px;
+}
+
+.page-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.seo-title {
+    display: none;
+}
+
+/* Emoji Introduction Section */
+.emoji-intro {
+    padding: 50px 25px;
+    text-align: center;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1320px;
+}
+
+.emoji-intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.emoji-intro p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.container-full {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Main Sidebar Styles (outside content area) */
+.main-sidebar {
+    flex: 0 0 250px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: calc((100% - 1320px) / 2 - 250px - 30px);
+    transform: translateY(-50%);
+    margin-right: 30px;
+    z-index: 100;
+}
+
+.category-list h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2196F3;
+    color: #333;
+}
+
+.category-list ul {
+    list-style: none;
+}
+
+.category-list ul li {
+    margin-bottom: 15px;
+}
+
+.category-list ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.category-list ul li a:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Content Area Styles */
+.content-area {
+    flex: 1;
+    width: 100%;
+    max-width: 1320px;
+    margin-left: 280px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.category {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1320px;
+    width: 100%;
+}
+
+.category h2 {
+    font-size: 2em;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* 添加锚点偏移样式，解决导航栏遮挡问题 */
+.category h2:target {
+    scroll-margin-top: 80px;
+}
+
+.category h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #2196F3;
+    margin: 10px 0;
+}
+
+/* Emoji Grid Layout */
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 220px);
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Search page emoji responsive container */
+.emoji-responsive-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+}
+
+/* Search page emoji cell specific styles - same as homepage */
+.emoji-responsive-container .emoji-cell {
+    border: 1px dashed #ccc;
+    border-width: 0 1px 1px 0;
+    padding: 35px 5px 20px 5px;
+    text-align: center;
+    background-color: white;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Search page emoji name specific styles - same as homepage */
+.emoji-responsive-container .emoji-name {
+    font-size: 0.9em;
+    color: #666;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5px;
+    left: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Search page emoji name hover effect - same as homepage */
+.emoji-responsive-container .emoji-cell:hover .emoji-name {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    background-color: rgba(33, 150, 243, 0.95);
+    border: 1px solid #2196F3;
+    border-radius: 3px;
+    z-index: 1000;
+    width: 90%;
+    padding: 6px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    bottom: 5px;
+    left: 5%;
+    transform: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Search page emoji img specific styles - same as homepage */
+.emoji-responsive-container .emoji-img {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    font-size: 2.5em;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Ensure search page emoji container is responsive - same as homepage */
+@media screen and (min-width: 1021px) {
+    /* 电脑端每行5个，确保每行最后一个单元格没有右边框 */
+    .emoji-responsive-container .emoji-cell:nth-child(5n),
+    .emoji-responsive-container .emoji-cell:last-child {
+        border-right: none !important;
+    }
+    
+    /* 确保其他单元格有右边框 */
+    .emoji-responsive-container .emoji-cell:not(:nth-child(5n)):not(:last-child) {
+        border-right: 1px dashed #ccc !important;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .emoji-responsive-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .emoji-responsive-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emoji-responsive-container .emoji-cell {
+        border: 1px dashed #ccc;
+        border-width: 0 1px 1px 0;
+        padding: 15px;
+    }
+    
+    /* 确保每行最后一个单元格没有右边框 */
+    .emoji-responsive-container .emoji-cell:nth-child(2n),
+    .emoji-responsive-container .emoji-cell:last-child {
+        border-right: none !important;
+    }
+    
+    /* 确保其他单元格有右边框 */
+    .emoji-responsive-container .emoji-cell:not(:nth-child(2n)):not(:last-child) {
+        border-right: 1px dashed #ccc !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .emoji-responsive-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emoji-responsive-container .emoji-cell {
+        border: 1px dashed #ccc;
+        border-width: 0 1px 1px 0;
+        padding: 15px;
+    }
+    
+    /* 确保每行最后一个单元格没有右边框 */
+    .emoji-responsive-container .emoji-cell:nth-child(2n),
+    .emoji-responsive-container .emoji-cell:last-child {
+        border-right: none !important;
+    }
+    
+    /* 确保其他单元格有右边框 */
+    .emoji-responsive-container .emoji-cell:not(:nth-child(2n)):not(:last-child) {
+        border-right: 1px dashed #ccc !important;
+    }
+}
+
+.emoji-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 220px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #ccc; /* 添加虚线边框 */
+}
+
+.emoji-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.emoji {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.emoji-name {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Emoji Table Layout (for Apple Emojis.html) */
+.emoji-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.emoji-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* 首页的 emoji-row 一行显示5个 */
+.home-page .emoji-row {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.emoji-cell {
+    border: 1px dashed #ccc;
+    border-width: 0 1px 1px 0;
+    padding: 35px 5px 20px 5px;
+    text-align: center;
+    background-color: white;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* 首页的 emoji-cell 高度 */
+.home-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 30px 5px;
+}
+
+/* 首页的 emoji-img 尺寸 */
+.home-page .emoji-img {
+    height: 60px;
+    width: auto;
+}
+
+/* Apple Emojis 页面的 emoji-cell 高度 */
+.apple-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Google Emojis 页面的 emoji-cell 高度 */
+.google-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Microsoft Emojis 页面的 emoji-cell 高度 */
+.microsoft-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Facebook Emojis 页面的 emoji-cell 高度 */
+.facebook-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Twitter Emojis 页面的 emoji-cell 高度 */
+.twitter-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Whatsapp Emojis 页面的 emoji-cell 高度 */
+.whatsapp-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* TikTok Emojis 页面的 emoji-cell 高度 */
+.tiktok-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Mozilla Emojis 页面的 emoji-cell 高度 */
+.mozilla-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* JoyPixels Animation Emojis 页面的 emoji-cell 高度 */
+.joypixels-animation-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* JoyPixels Emojis 页面的 emoji-cell 高度 */
+.joypixels-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* EmojiOne Emojis 页面的 emoji-cell 高度 */
+.emojione-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* EmojiTwo Emojis 页面的 emoji-cell 高度 */
+.emojitwo-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* OpenMoji Emojis 页面的 emoji-cell 高度 */
+.openmoji-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* EmojiDex Emojis 页面的 emoji-cell 高度 */
+.emojidex-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* BlobMoji Emojis 页面的 emoji-cell 高度 */
+.blobmoji-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Samsung Emojis 页面的 emoji-cell 高度 */
+.samsung-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* HTC Emojis 页面的 emoji-cell 高度 */
+.htc-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* LG Emojis 页面的 emoji-cell 高度 */
+.lg-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Docomo Emojis 页面的 emoji-cell 高度 */
+.docomo-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Softbank Emojis 页面的 emoji-cell 高度 */
+.softbank-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Au Kddi Emojis 页面的 emoji-cell 高度 */
+.au-kddi-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Skype Animation Emojis 页面的 emoji-cell 高度 */
+.skype-animation-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Symbola Emojis 页面的 emoji-cell 高度 */
+.symbola-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Telegram Animation Emojis 页面的 emoji-cell 高度 */
+.telegram-animation-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Emojipedia Emojis 页面的 emoji-cell 高度 */
+.emojipedia-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Sample Emojis 页面的 emoji-cell 高度 */
+.sample-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* QQ Emojis 页面的 emoji-cell 高度 */
+.qq-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Wechat Emojis 页面的 emoji-cell 高度 */
+.wechat-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Weibo Emojis 页面的 emoji-cell 高度 */
+.weibo-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Baidu Emojis 页面的 emoji-cell 高度 */
+.baidu-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Douyin Emojis 页面的 emoji-cell 高度 */
+.douyin-emojis-page .emoji-cell {
+    height: 150px;
+    padding: 25px 5px 40px 5px;
+}
+
+/* Bilibili Emojis 页面的 emoji-cell 高度 */
+.bilibili-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* 添加33个新页面的样式设置 */
+/* Au KDDI Emojis 页面的 emoji-cell 高度 */
+.au-kddi-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Baidu Emojis 页面的 emoji-cell 高度 */
+.baidu-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* BlobMoji Emojis 页面的 emoji-cell 高度 */
+.blobmoji-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Douyin Emojis 页面的 emoji-cell 高度 */
+.douyin-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* EmojiDex Emojis 页面的 emoji-cell 高度 */
+.emojidex-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* EmojiOne Emojis 页面的 emoji-cell 高度 */
+.emojione-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Emojipedia Emojis 页面的 emoji-cell 高度 */
+.emojipedia-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* EmojiTwo Emojis 页面的 emoji-cell 高度 */
+.emojitwo-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Facebook Emojis 页面的 emoji-cell 高度 */
+.facebook-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Docomo Emojis 页面的 emoji-cell 高度 */
+.docomo-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Google Emojis 页面的 emoji-cell 高度 */
+.google-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* HTC Emojis 页面的 emoji-cell 高度 */
+.htc-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Huawei Emojis 页面的 emoji-cell 高度 */
+.huawei-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* JoyPixels Emojis 页面的 emoji-cell 高度 */
+.joypixels-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* JoyPixels Animation Emojis 页面的 emoji-cell 高度 */
+.joypixels-animation-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* LG Emojis 页面的 emoji-cell 高度 */
+.lg-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Microsoft Emojis 页面的 emoji-cell 高度 */
+.microsoft-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Microsoft Teams Emojis 页面的 emoji-cell 高度 */
+.microsoft-teams-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Mozilla Emojis 页面的 emoji-cell 高度 */
+.mozilla-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* OpenMoji Emojis 页面的 emoji-cell 高度 */
+.openmoji-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* QQ Emojis 页面的 emoji-cell 高度 */
+.qq-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Sample Emojis 页面的 emoji-cell 高度 */
+.sample-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Samsung Emojis 页面的 emoji-cell 高度 */
+.samsung-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Skype Animation Emojis 页面的 emoji-cell 高度 */
+.skype-animation-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* SoftBank Emojis 页面的 emoji-cell 高度 */
+.softbank-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Symbola Emojis 页面的 emoji-cell 高度 */
+.symbola-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Telegram Animation Emojis 页面的 emoji-cell 高度 */
+.telegram-animation-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* TikTok Emojis 页面的 emoji-cell 高度 */
+.tiktok-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* WeChat Emojis 页面的 emoji-cell 高度 */
+.wechat-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Weibo Emojis 页面的 emoji-cell 高度 */
+.weibo-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* WhatsApp Emojis 页面的 emoji-cell 高度 */
+.whatsapp-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Twitter Emojis 页面的 emoji-cell 高度 */
+.twitter-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Huawei Emojis 页面的 emoji-cell 高度 */
+.huawei-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Microsoft Teams Emojis 页面的 emoji-cell 高度 */
+.microsoft-teams-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* Emojiall Emojis 页面的 emoji-cell 高度 */
+.emojiall-emojis-page .emoji-cell {
+    height: 130px;
+    padding: 15px 5px 15px 5px;
+}
+
+/* 确保每行最后一个单元格没有右边框 */
+.emoji-row .emoji-cell:nth-child(6n),
+.emoji-row .emoji-cell:last-child {
+    border-right: none !important;
+}
+
+/* 确保其他单元格有右边框 */
+.emoji-row .emoji-cell:not(:nth-child(6n)):not(:last-child) {
+    border-right: 1px dashed #ccc !important;
+}
+
+/* 首页一行5个的边框规则 */
+.home-page .emoji-row .emoji-cell:nth-child(5n),
+.home-page .emoji-row .emoji-cell:last-child {
+    border-right: none !important;
+}
+
+.home-page .emoji-row .emoji-cell:not(:nth-child(5n)):not(:last-child) {
+    border-right: 1px dashed #ccc !important;
+}
+
+.emoji-title {
+    font-weight: normal;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.emoji-img {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    font-size: 3em;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.emoji-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.emoji-table .emoji-name {
+    font-size: 0.9em;
+    color: #666;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 15px;
+    left: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.emoji-cell:hover .emoji-name {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    background-color: rgba(33, 150, 243, 0.95);
+    border: 1px solid #2196F3;
+    border-radius: 3px;
+    z-index: 1000;
+    width: 90%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    bottom: 5px;
+    left: 5%;
+    transform: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.emoji-actions {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.emoji-cell:hover .emoji-actions {
+    opacity: 1;
+    z-index: 20;
+}
+
+.emoji-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.emoji-cell:hover::before {
+    opacity: 1;
+}
+
+.emoji-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.copy-btn {
+    background-color: #2196F3;
+    color: white;
+    margin: 10px 5px;
+    display: inline-block;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    margin: 10px 5px;
+    display: inline-block;
+}
+
+/* Article Content */
+.article-content {
+    padding: 0;
+    background-color: transparent;
+    margin: 20px 0;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0 30px 0;
+    color: #333;
+}
+
+.content h2 {
+    margin: 30px 0 15px 0;
+    color: #333;
+}
+
+.content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.content ul, .content ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.content li {
+    margin-bottom: 10px;
+}
+
+.image-center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-center img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0b7dda;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.copyright p {
+    margin: 5px 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1020px) {
+    .emoji-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .emoji-row {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .nav-menu ul {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu ul li {
+        margin: 5px 10px;
+    }
+    
+    .search-box {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .search-box input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* Mobile Responsive Navigation */
+@media screen and (max-width: 768px) {
+    /* Show mobile menu icon */
+    .mobile-menu-icon {
+        display: flex;
+    }
+    
+    /* Hide desktop menu by default */
+    .nav-menu {
+        display: none;
+        width: 50%;
+        position: fixed;
+        top: 0;
+        left: -50%;
+        height: 100vh;
+        background-color: white;
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        padding-top: 80px;
+    }
+    
+    /* Show menu when active - slide in from left */
+    .nav-menu.active {
+        display: block;
+        left: 0;
+    }
+    
+    /* Change menu icon to close icon when active */
+    .mobile-menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Stack menu items vertically */
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-menu ul li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 2px dashed #ccc;
+    }
+    
+    /* Remove border from last item */
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Dropdown items don't have border */
+    .nav-menu .dropdown-content li {
+        border-bottom: none;
+    }
+    
+    .nav-menu ul li a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Dropdown menu styles for mobile */
+    .dropdown-content {
+        position: static !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        display: none !important;
+        padding: 0;
+        margin: 0;
+        background-color: #f5f5f5;
+    }
+    
+    .dropdown-content.active {
+        display: block !important;
+    }
+    
+    /* Dropdown toggle icon for mobile */
+    .nav-menu ul li.dropdown > a {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Add down arrow for dropdowns */
+    .nav-menu ul li.dropdown > a::after {
+        content: ' ▼';
+        font-size: 12px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Rotate arrow when dropdown is active */
+    .nav-menu ul li.dropdown.active > a::after {
+        transform: rotate(180deg);
+    }
+    
+    /* Dropdown content links styles */
+    .dropdown-content a {
+        padding-left: 30px !important;
+        background-color: #f5f5f5 !important;
+    }
+    
+    /* Search box styles for mobile */
+    .search-box {
+        position: relative;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: white;
+        box-sizing: border-box;
+    }
+    
+    .search-box input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Reset nav-container flex-wrap for mobile */
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    /* Show search box below logo and menu on mobile */
+    .nav-container .search-box {
+        display: block;
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+    
+    /* Increase search input height */
+    .nav-container .search-box input[type="text"] {
+        height: 48px;
+        padding: 14px 15px;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    /* Add padding to bottom of navbar to avoid covering content */
+    .navbar {
+        padding-bottom: 10px;
+    }
+    
+    /* Add margin-top to main content to avoid being covered by navbar */
+    main.content-area {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .layout-wrapper {
+        flex-direction: column;
+    }
+    
+    .main-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .emoji-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emoji-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 确保首页在移动端也显示一行2个 */
+    .home-page .emoji-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emoji-cell {
+        border: 1px dashed #ccc;
+        border-width: 0 1px 1px 0;
+        padding: 15px;
+    }
+    
+    .emoji-row .emoji-cell:last-child {
+        border-right: none;
+    }
+    
+    .emoji-row:nth-child(odd) .emoji-cell {
+        border-right: 1px dashed #ccc;
+    }
+    
+    .emoji-row:nth-child(even) .emoji-cell {
+        border-right: 1px dashed #ccc;
+    }
+    
+    .nav-menu ul li {
+        margin: 5px;
+    }
+    
+    .nav-menu ul li a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    /* 移动端点击显示复制下载按钮 */
+    .emoji-cell.active .emoji-actions {
+        opacity: 1;
+    }
+    
+    .emoji-actions {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    /* Search page specific styles */
+    .search-page .content-area {
+        padding: 0 15px;
+    }
+    
+    .search-results {
+        padding: 0 15px;
+    }
+    
+    .search-page .search-results {
+        padding: 0 15px;
+    }
+    
+    .search-results-container {
+        padding: 0;
+    }
+    
+    .search-page .search-results-container {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    .emoji-grid {
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emoji-item {
+        padding: 15px;
+    }
+    
+    .emoji {
+        font-size: 2.5em;
+    }
+    
+    .emoji-name {
+        font-size: 0.8em;
+    }
+    
+    .emoji-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Search page specific styles */
+    .search-page .content-area {
+        padding: 0 15px;
+    }
+    
+    .search-page .search-results {
+        padding: 0 15px;
+    }
+    
+    .search-page .emoji-grid {
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Emoji Vendors Page Styles */
+.emoji-vendors-page .vendor-cell {
+    height: 110px;
+    padding: 15px 5px 30px 5px;
+}
+
+.emoji-vendors-page .vendor-cell .emoji-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 0 auto 10px;
+    transition: transform 0.3s ease;
+}
+
+.emoji-vendors-page .vendor-cell .emoji-img:hover {
+    transform: scale(1.1);
+}
+
+.emoji-vendors-page .vendor-cell .emoji-name {
+    font-size: 0.85em;
+    color: #666;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5px;
+    left: 5%;
+    text-align: center;
+}
+
+/* 移除供应商名称的悬停效果 */
+.emoji-vendors-page .vendor-cell:hover .emoji-name {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #666;
+    font-weight: normal;
+    z-index: auto;
+    width: 90%;
+    padding: 0 5px;
+    bottom: 5px;
+    left: 5%;
+    transform: none;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 确保每行最后一个单元格没有右边框 */
+.emoji-vendors-page .emoji-row .emoji-cell:nth-child(6n),
+.emoji-vendors-page .emoji-row .emoji-cell:last-child {
+    border-right: none !important;
+}
+
+/* 确保其他单元格有右边框 */
+.emoji-vendors-page .emoji-row .emoji-cell:not(:nth-child(6n)):not(:last-child) {
+    border-right: 1px dashed #ccc !important;
+}

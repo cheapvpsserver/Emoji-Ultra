@@ -1,0 +1,310 @@
+/* Grinning Face page-specific CSS */
+
+/* Ensure top and bottom navigation bars display correctly */
+#site-header,
+#site-footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Title styles */
+.emoji-title-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.emoji-title-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Hide SEO title */
+.seo-title {
+    display: none;
+    font-size: 0;
+    color: transparent;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Emoji display section */
+.emoji-display-section {
+    margin-bottom: 40px;
+}
+
+.emoji-display-container {
+    width: 100%;
+}
+
+.emoji-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+/* Emoji content layout - Display one per row with dashed separators */
+.emoji-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: none;
+    border-left: none;
+    overflow: hidden;
+    background-color: transparent;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Emoji item style - No background, dashed border separation, height auto to fit content */
+.emoji-item {
+    text-align: center;
+    background-color: transparent;
+    border-bottom: 1px dashed #ccc;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 20px;
+    transition: none;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: none;
+    cursor: default;
+    flex-shrink: 1;
+}
+
+.emoji-item:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+/* Emoji style */
+.emoji {
+    font-size: 180px;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ASCII emoji style */
+.ascii-emoji .emoji {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    overflow: visible;
+    line-height: 1.3;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: normal;
+    letter-spacing: 0;
+    word-spacing: 0;
+    display: block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    min-width: auto;
+    min-height: auto;
+}
+
+/* Copy button style */
+.copy-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: none;
+    width: 80%;
+    max-width: 150px;
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    background-color: #1976D2;
+    transform: none;
+}
+
+/* Code display section */
+.emoji-code-section {
+    margin-bottom: 40px;
+}
+
+.emoji-code-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.code-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.code-item {
+    text-align: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.code-item code {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.code-item .copy-btn {
+    width: auto;
+    max-width: none;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Meaning and appearance section */
+.emoji-meaning-section {
+    margin-bottom: 40px;
+}
+
+.emoji-meaning-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.meaning-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.meaning-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Mobile responsive design */
+@media screen and (max-width: 768px) {
+    .emoji-content {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .code-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .emoji-item {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .emoji {
+        font-size: 120px;
+        height: auto;
+        min-height: auto;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .ascii-emoji .emoji {
+        font-size: 18px;
+        height: auto;
+        min-height: auto;
+        line-height: 1.2;
+        padding: 15px;
+        overflow: visible;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+    }
+    
+    .copy-btn {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .emoji-item {
+        padding: 30px 15px;
+        min-height: auto;
+    }
+    
+    .emoji {
+        font-size: 100px;
+        min-height: auto;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .ascii-emoji .emoji {
+        font-size: 14px;
+        min-height: auto;
+        line-height: 1.1;
+        padding: 10px;
+        overflow: visible;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+        word-break: break-all;
+    }
+    
+    .copy-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    
+    .emoji-title-section h1 {
+        font-size: 24px;
+    }
+    
+    .emoji-meaning-section h3,
+    .emoji-code-section h3 {
+        font-size: 20px;
+    }
+}

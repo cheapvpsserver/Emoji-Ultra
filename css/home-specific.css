@@ -1,0 +1,23 @@
+/* 首页专用CSS - 移除emoji-cell的黑色透明背景 */
+.home-page .emoji-cell::before {
+    content: none;
+}
+
+.home-page .emoji-cell:hover::before {
+    opacity: 0;
+}
+
+/* 首页专用CSS - 确保只显示copy按钮，隐藏download按钮 */
+.home-page .download-btn {
+    display: none !important;
+}
+
+/* 首页专用CSS - 调整emoji-actions的样式，确保它在悬停时正常显示 */
+.home-page .emoji-actions {
+    background-color: transparent;
+}
+
+.home-page .emoji-cell:hover .emoji-actions {
+    opacity: 1;
+    z-index: 20;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Search | Emoji Ultra</title>
+    <meta name="description" content="Search for any emoji by name or directly by emoji. Copy and paste emojis instantly from Emoji Ultra." />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for search page */
+        .search-page .content-area {
+            margin: 0 auto;
+            max-width: 1320px;
+            width: 100%;
+        }
+        
+        
+        .search-page h1 {
+            text-align: center;
+            margin: 50px 0 20px;
+            font-size: 2.5em;
+        }
+        
+        .search-page p {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #666;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body class="search-page">
+    <!-- Protocol Modal -->
+    <div id="protocol-modal" class="modal">
+        <div class="modal-content">
+            <h2>Website Usage Agreement</h2>
+            <p>Welcome to our Emoji Symbol Library. Before using this website, please read the following terms carefully:</p>
+            <p>1. All emojis provided by this website are for personal learning and communication purposes only.</p>
+            <p>2. Do not use the emojis from this website for commercial purposes without authorization.</p>
+            <p>3. This website makes no guarantees regarding the availability or accuracy of the emojis.</p>
+            <p>4. By using this website, you agree to bear the risks associated with its use.</p>
+            <div class="modal-buttons">
+                <button id="reject-btn">Reject</button>
+                <button id="accept-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Site Header -->
+    <div id="site-header"></div>
+    
+    <!-- Main Content Area -->
+    <main class="content-area">
+        <!-- Search Results Section -->
+        <section id="search-results" class="search-results">
+            <h2>Search Results</h2>
+            <div id="search-results-container"></div>
+        </section>
+    </main>
+    
+    <!-- Site Footer -->
+    <div id="site-footer"></div>
+    
+    <!-- Load Scripts -->
+    <script src="js/include.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 // Function to load HTML components
 function loadComponent(elementId, filePath) {
-    // 使用绝对路径确保在所有页面中都能正确加载
+    // Use absolute path to ensure correct loading in all pages
     let fullPath;
     
-    // 对于includes目录下的文件，始终使用根目录相对路径
+    // For files in the includes directory, always use root-relative path
     if (filePath.startsWith('includes/')) {
         fullPath = '/' + filePath;
     } else {
@@ -35,7 +35,7 @@ function loadComponent(elementId, filePath) {
         })
         .catch(error => {
             console.error('Error loading component:', error);
-            // 在开发环境中显示错误信息
+            // Display error message in development environment
             const element = document.getElementById(elementId);
             if (element) {
                 element.innerHTML = `<div style="color: red; padding: 10px; border: 1px solid red; margin: 10px;">

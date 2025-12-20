@@ -13,21 +13,19 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                    <a href="#">Emoji-Vendors</a>
+                    <a javascript:void(0)>Emoji-Vendors</a>
                     <ul class="dropdown-content">
-                        <li><a href="/Emoji-Vendors/Apple-Emojis.html">Apple</a></li>
                         <li><a href="/Emoji-Vendors/Google-Emojis.html">Google</a></li>
                         <li><a href="/Emoji-Vendors/Microsoft-Emojis.html">Microsoft</a></li>
                         <li><a href="/Emoji-Vendors/Facebook-Emojis.html">Facebook</a></li>
                         <li><a href="/Emoji-Vendors/Twitter-Emojis.html">Twitter</a></li>
                         <li><a href="/Emoji-Vendors/Whatsapp-Emojis.html">Whatsapp</a></li>
-                        <li><a href="/Emoji-Vendors/TikTok-Emojis.html">TikTok</a></li>
                         <li><a href="/articles/emoji-vendors.html">More Vendors</a></li>
                     </ul>
                 </li>
-                <li><a href="/articles/article.html">Articles</a></li>
-                <li><a href="/Emoji-Vendors/Apple-Emojis.html">Apple Emojis</a></li>
-                <li><a href="/articles/emoji-vendors.html">Emoji-Vendors</a></li>
+                <li><a href="/Emoji-Vendors/Apple-Emojis.html">Apple Emoji</a></li>
+                <li><a href="/Emoji-Vendors/TikTok-Emojis.html">TikTok Emoji</a></li>
+                <li><a href="https://ko-fi.com/libredepot" target="_blank">🤑 Sponsor</a></li>
             </ul>
         </nav>
         <div class="search-box">
@@ -54,10 +52,10 @@
                 <p>Disclaimer: This website is for educational purposes only. All emojis are the property of their respective owners.</p>
             </div>
             <div class="social-icons">
-                <a href="#" aria-label="Facebook">📘</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-                <a href="#" aria-label="Instagram">📷</a>
-                <a href="#" aria-label="GitHub">🐙</a>
+                <a javascript:void(0) aria-label="Facebook">📘</a>
+                <a javascript:void(0) aria-label="Twitter">🐦</a>
+                <a javascript:void(0) aria-label="Instagram">📷</a>
+                <a javascript:void(0) aria-label="GitHub">🐙</a>
             </div>
         </div>
     </div>

@@ -3,6 +3,33 @@ window.addEventListener('error', function(e) {
     console.error('Global error occurred:', e.error);
 });
 
+// Add favicon to all pages dynamically
+function addFavicon() {
+    // Check if favicon already exists
+    if (!document.querySelector('link[rel="icon"]')) {
+        // Create favicon link elements
+        const faviconLink = document.createElement('link');
+        faviconLink.rel = 'icon';
+        faviconLink.href = '/images/logo1.png';
+        faviconLink.type = 'image/png';
+        
+        const appleTouchIcon = document.createElement('link');
+        appleTouchIcon.rel = 'apple-touch-icon';
+        appleTouchIcon.href = '/images/logo1.png';
+        
+        const shortcutIcon = document.createElement('link');
+        shortcutIcon.rel = 'shortcut icon';
+        shortcutIcon.href = '/images/logo1.png';
+        shortcutIcon.type = 'image/png';
+        
+        // Add to head
+        const head = document.head;
+        head.appendChild(faviconLink);
+        head.appendChild(appleTouchIcon);
+        head.appendChild(shortcutIcon);
+    }
+}
+
 // Protocol modal functionality
 function initProtocolModal() {
     const modal = document.getElementById('protocol-modal');
@@ -101,6 +128,7 @@ function initMobileNavigation() {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
+    addFavicon();
     initProtocolModal();
     initMobileNavigation();
     

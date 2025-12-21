@@ -13,8 +13,8 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                    <a javascript:void(0)>Emoji-Vendors</a>
-                    <ul class="dropdown-content">
+                        <a href="javascript:void(0)">Emoji-Vendors</a>
+                        <ul class="dropdown-content">
                         <li><a href="/Emoji-Vendors/Google-Emojis.html">Google</a></li>
                         <li><a href="/Emoji-Vendors/Microsoft-Emojis.html">Microsoft</a></li>
                         <li><a href="/Emoji-Vendors/Facebook-Emojis.html">Facebook</a></li>

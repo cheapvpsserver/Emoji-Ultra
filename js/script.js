@@ -92,7 +92,7 @@ function initMobileNavigation() {
     if (navMenu) {
         navMenu.addEventListener('click', function(e) {
             // Check if the click is on a dropdown toggle
-            const dropdownToggle = e.target.closest('.dropdown > a[href="#"]');
+            const dropdownToggle = e.target.closest('.dropdown > a');
             if (dropdownToggle) {
                 e.preventDefault();
                 

@@ -1183,25 +1183,28 @@ body {
     padding: 15px 5px 15px 5px;
 }
 
-/* 确保每行最后一个单元格没有右边框 */
-.emoji-row .emoji-cell:nth-child(6n),
-.emoji-row .emoji-cell:last-child {
-    border-right: none !important;
-}
+/* Desktop-specific border rules - min-width: 769px */
+@media screen and (min-width: 769px) {
+    /* 确保每行最后一个单元格没有右边框 */
+    .emoji-row .emoji-cell:nth-child(6n),
+    .emoji-row .emoji-cell:last-child {
+        border-right: none !important;
+    }
 
-/* 确保其他单元格有右边框 */
-.emoji-row .emoji-cell:not(:nth-child(6n)):not(:last-child) {
-    border-right: 1px dashed #ccc !important;
-}
+    /* 确保其他单元格有右边框 */
+    .emoji-row .emoji-cell:not(:nth-child(6n)):not(:last-child) {
+        border-right: 1px dashed #ccc !important;
+    }
 
-/* 首页一行5个的边框规则 */
-.home-page .emoji-row .emoji-cell:nth-child(5n),
-.home-page .emoji-row .emoji-cell:last-child {
-    border-right: none !important;
-}
+    /* 首页一行5个的边框规则 */
+    .home-page .emoji-row .emoji-cell:nth-child(5n),
+    .home-page .emoji-row .emoji-cell:last-child {
+        border-right: none !important;
+    }
 
-.home-page .emoji-row .emoji-cell:not(:nth-child(5n)):not(:last-child) {
-    border-right: 1px dashed #ccc !important;
+    .home-page .emoji-row .emoji-cell:not(:nth-child(5n)):not(:last-child) {
+        border-right: 1px dashed #ccc !important;
+    }
 }
 
 .emoji-title {
@@ -1401,6 +1404,7 @@ body {
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+    z-index: 9999;
 }
 
 .back-to-top:hover {
@@ -1554,6 +1558,10 @@ body {
         background-color: #f5f5f5;
     }
     
+    .dropdown.active .dropdown-content {
+        display: block !important;
+    }
+    
     .dropdown-content.active {
         display: block !important;
     }
@@ -1658,22 +1666,38 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    /* 重置移动端emoji-cell边框 */
     .emoji-cell {
-        border: 1px dashed #ccc;
-        border-width: 0 1px 1px 0;
+        border: 1px dashed #ccc !important;
+        border-width: 0 0 1px 0 !important;
         padding: 15px;
     }
     
-    .emoji-row .emoji-cell:last-child {
-        border-right: none;
+    /* 移动端一行2个，只在中间显示虚线竖线 */
+    /* 在2列网格中，所有奇数索引的单元格都是每行的第一个单元格 */
+    .emoji-row .emoji-cell:nth-child(odd) {
+        border-right: 1px dashed #ccc !important;
     }
     
-    .emoji-row:nth-child(odd) .emoji-cell {
-        border-right: 1px dashed #ccc;
+    /* 每行第二个单元格（偶数索引）没有右边框 */
+    .emoji-row .emoji-cell:nth-child(even) {
+        border-right: none !important;
     }
     
-    .emoji-row:nth-child(even) .emoji-cell {
-        border-right: 1px dashed #ccc;
+    /* 为首页添加更具体的移动端边框规则 */
+    .home-page .emoji-row .emoji-cell {
+        border: 1px dashed #ccc !important;
+        border-width: 0 0 1px 0 !important;
+    }
+    
+    /* 首页2列网格中，所有奇数索引的单元格都是每行的第一个单元格 */
+    .home-page .emoji-row .emoji-cell:nth-child(odd) {
+        border-right: 1px dashed #ccc !important;
+    }
+    
+    /* 首页每行第二个单元格（偶数索引）没有右边框 */
+    .home-page .emoji-row .emoji-cell:nth-child(even) {
+        border-right: none !important;
     }
     
     .nav-menu ul li {

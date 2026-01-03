@@ -37,6 +37,7 @@
             <span></span>
         </div>
     </div>
+    <meta name="google-site-verification" content="XRzQ3KMK5ufQgL5nKnsyjc3NDaPLitiCyhdALrR_oXc" />
 </header>`;
 
     // Preloaded footer HTML to avoid network requests
